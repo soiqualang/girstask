@@ -1,0 +1,72 @@
+<div class="page-header">
+    <h2><?= t('About') ?></h2>
+</div>
+<div class="listing">
+    <ul>
+        <li>
+            <?= t('Official website:') ?>
+            <a href="http://girs.vn/" target="_blank" rel="noreferer">http://girs.vn/</a>
+        </li>
+        <li>
+            <?= t('Author:') ?>
+            <strong><a href="http://trangxoa.com/">DTLong</a></strong>
+        </li>
+    </ul>
+</div>
+<div class="page-header">
+	<h2>Mục đích</h2>
+</div>
+<div class="listing">
+	Ứng dụng được tạo ra với mục đích dành cho các thành viên trung tâm Viễn thám và Hệ thông tin Địa lý (GIRS) sử dụng để quản lý các công việc hiện tại đang làm, giúp quản lý thời gian, tiến độ công việc. Cheer up^^
+</div>
+
+<div class="page-header">
+    <h2><?= t('Database') ?></h2>
+</div>
+<div class="listing">
+    <ul>
+        <li>
+            <?= t('Database driver:') ?>
+            <strong><?= $this->e(DB_DRIVER) ?></strong>
+        </li>
+        <?php if (DB_DRIVER === 'sqlite'): ?>
+            <li>
+                <?= t('Database size:') ?>
+                <strong><?= $this->text->bytes($db_size) ?></strong>
+            </li>
+            <li>
+                <?= $this->url->link(t('Download the database'), 'config', 'downloadDb', array(), true) ?>&nbsp;
+                <?= t('(Gzip compressed Sqlite file)') ?>
+            </li>
+            <li>
+                <?= $this->url->link(t('Optimize the database'), 'config', 'optimizeDb', array(), true) ?>&nbsp;
+                <?= t('(VACUUM command)') ?>
+            </li>
+        <?php endif ?>
+    </ul>
+</div>
+
+<div class="page-header">
+    <h2><?= t('Keyboard shortcuts') ?></h2>
+</div>
+<div class="listing">
+    <h3><?= t('Board/Calendar/List view') ?></h3>
+    <ul>
+        <li><?= t('Switch to the board view') ?> = <strong>v b</strong></li>
+        <li><?= t('Switch to the calendar view') ?> = <strong>v c</strong></li>
+        <li><?= t('Switch to the list view') ?> = <strong>v l</strong></li>
+    </ul>
+    <h3><?= t('Board view') ?></h3>
+    <ul>
+        <li><?= t('New task') ?> = <strong>n</strong></li>
+        <li><?= t('Expand/collapse tasks') ?> = <strong>s</strong></li>
+        <li><?= t('Compact/wide view') ?> = <strong>c</strong></li>
+    </ul>
+    <h3><?= t('Application') ?></h3>
+    <ul>
+        <li><?= t('Open board switcher') ?> = <strong>b</strong></li>
+        <li><?= t('Go to the search/filter box') ?> = <strong>f</strong></li>
+        <li><?= t('Close dialog box') ?> = <strong>ESC</strong></li>
+        <li><?= t('Submit a form') ?> = <strong>CTRL+ENTER</strong> <?= t('or') ?> <strong>⌘+ENTER</strong></li>
+    </ul>
+</div>
